@@ -15,7 +15,7 @@ PRIMARY KEY (id_prod_Produit)) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS Type_Produit ;
 CREATE TABLE Type_Produit (id_type_prod_Type_Produit INT(10) AUTO_INCREMENT NOT NULL,
-nom_type_prod_Type_Produit CHAR(25),
+nom_type_prod_Type_Produit CHAR(50),
 PRIMARY KEY (id_type_prod_Type_Produit)) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS Tag ;
