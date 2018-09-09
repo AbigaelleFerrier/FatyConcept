@@ -2163,6 +2163,7 @@ html {
  */
 body {
   margin: 0;
+  /* background: #ff6a00; */
 }
 
 /**
@@ -4478,6 +4479,9 @@ nav .input-field label.active i {
   nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
     height: 64px;
     line-height: 64px;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
   }
   .navbar-fixed {
     height: 64px;
@@ -4881,6 +4885,10 @@ small {
   left: 0;
   max-width: 100%;
   padding: 24px;
+  background: rgba(0, 0, 0, 0.70);
+  border-right: solid 5px #fff;
+  border-top: solid 5px #fff;
+  text-transform: capitalize;
 }
 
 .card .card-content {
@@ -4903,7 +4911,7 @@ small {
 }
 
 .card .card-action {
-  background-color: inherit;
+  background-color: #dadada;
   border-top: 1px solid rgba(160, 160, 160, 0.2);
   position: relative;
   padding: 16px 24px;
@@ -5252,16 +5260,17 @@ small {
 .btn, .btn-large, .btn-small {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #000000;
   text-align: center;
   letter-spacing: .5px;
   -webkit-transition: background-color .2s ease-out;
   transition: background-color .2s ease-out;
   cursor: pointer;
+  outline: solid #fff 5px;
 }
 
 .btn:hover, .btn-large:hover, .btn-small:hover {
-  background-color: #2bbbad;
+  background-color: #2f2f2f;
 }
 
 .btn-floating {
@@ -5544,6 +5553,7 @@ button.btn-floating {
 
 .dropdown-content {
   background-color: #fff;
+  width: auto !important;
   margin: 0;
   display: none;
   min-width: 100px;
@@ -5554,7 +5564,7 @@ button.btn-floating {
   top: 0;
   z-index: 9999;
   -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
+  transform-origin: 0 0;
 }
 
 .dropdown-content:focus {
@@ -9119,7 +9129,25 @@ input[type=range]::-ms-thumb {
   }
 
   #header h1 {
-    text-align: center;
     color: #fff;
     padding-bottom: 1rem;
+    margin: 2rem auto;
+  }
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\      VOTE      \\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .vote-zone {
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 16px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
   }
