@@ -9151,3 +9151,20 @@ input[type=range]::-ms-thumb {
     vertical-align: middle;
     -webkit-tap-highlight-color: transparent;
   }
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\     TEXT SMALL     \\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .smallTxt {
+    font-size: 0.8rem;
+    color: #9a9a9a;
+  }
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\    TAGRECHERCHE    \\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .btnTagRecherche {
+    background: #d23000;
+  }

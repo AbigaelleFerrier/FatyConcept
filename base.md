@@ -14,11 +14,18 @@
 		<!-- Nav -->
 		<?php include ' assets/php/nav.php' ?>
 
+		<!-- Main -->
+		<div class="container">
+
+			<div class="row">
+			</div>
+		</div>
+		
 		<!-- Footer -->
 		<? include 'assets/php/footer.php'; ?>
 
 		<!--JavaScript at end of body for optimized loading-->
-		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<?php include 'assets/php/script_end_body.php'; ?>
 	</body>
 </html>
         
