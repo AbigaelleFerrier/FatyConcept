@@ -8,7 +8,7 @@
 			<li><a href="">Lorem</a></li>
   		</div>
   		<div class="col s6">
-  			<li><a href="">Lorem</a></li>
+  			<li><a href="">Lorem Helloeeeeeeee</a></li> 
 			<li><a href="">Lorem</a></li>
 			<li><a href="">Lorem</a></li>
 			<li><a href="">Lorem</a></li>
@@ -23,10 +23,10 @@
 		
 
 		<ul class="left hide-on-med-and-down">
+			<li><a href="index.php">Accueil</a></li>
 			<li><a href="">Lorem</a></li>
 			<li><a href="">Lorem</a></li>
-			<li><a href="">Lorem</a></li>
-			<li><a href="">Lorem</a></li>
+			<li><a href="contact.php">Contact</a></li>
 
 			<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
 
@@ -40,10 +40,10 @@
 
 <!-- Mobile -->
 <ul class="sidenav" id="mobile-demo">
-    <li><a href="">Lorem</a></li>
+    <li><a href="index.php">Accueil</a></li>
 	<li><a href="">Lorem</a></li>
 	<li><a href="">Lorem</a></li>
-	<li><a href="">Lorem</a></li>
+	<li><a href="contact.php">Contact</a></li>
 </ul>
 
 

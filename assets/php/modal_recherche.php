@@ -12,7 +12,7 @@
 					</div>
 					<div class="input-field col s12 m6">
 						<select>
-							<option value="" disabled selected>Choose your option</option>
+							<option value="" disabled selected>Choisir une catégorie</option>
 							<option value="1">Stickers</option>
 							<option value="2">Broderie</option>
 							<option value="3">Lettrerie</option>
