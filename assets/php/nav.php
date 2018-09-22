@@ -31,7 +31,7 @@
 			<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
 
 			<!-- Recherche -->
-			<li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Recherche<i class="material-icons right">search</i></a></li>
+			<li><a class="waves-effect waves-light btn btn-nav modal-trigger" href="#modal1">Recherche<i class="material-icons right">search</i></a></li>
 		</ul>
 	</div>
 
