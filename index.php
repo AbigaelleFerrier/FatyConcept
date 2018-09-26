@@ -1,7 +1,4 @@
-<?php
-	session_start();
-
-?>
+<?php include 'assets/php/start.php' ?>
 
 <!DOCTYPE html>
 
@@ -39,15 +36,6 @@
 				        </div>
 
 				        <div class="card-action">
-
-				        	<div class="vote-zone tooltipped" data-position="bottom" data-tooltip="Note : 4.2/5">
-				        		<i class="material-icons">star</i>
-				        		<i class="material-icons">star</i>
-				        		<i class="material-icons">star</i>
-				        		<i class="material-icons">star_half</i>
-				        		<i class="material-icons">star_border</i>
-				        	</div>
-
 				        	<a class="waves-effect waves-light btn">Voir le produit</a>
 				        </div>
 

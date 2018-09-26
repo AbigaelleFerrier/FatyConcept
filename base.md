@@ -1,7 +1,4 @@
-<?php
-	session_start();
-
-?>
+<?php include 'assets/php/start.php' ?>
 
 <!DOCTYPE html>
 

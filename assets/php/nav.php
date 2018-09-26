@@ -19,10 +19,12 @@
 <!-- NAV -->
 <nav>
 	<div class="container nav-wrapper">
+		<a href="#" class="brand-logo elephant">Faty Concept</a>
+
 		<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 		
 
-		<ul class="left hide-on-med-and-down">
+		<ul class="right hide-on-med-and-down">
 			<li><a href="index.php">Accueil</a></li>
 			<li><a href="">Lorem</a></li>
 			<li><a href="">Lorem</a></li>
