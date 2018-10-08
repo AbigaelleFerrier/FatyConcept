@@ -11,8 +11,9 @@ CREATE TABLE Client(
         id_clt     Int(10) NOT NULL AUTO_INCREMENT,
         nom_clt    Char (50) ,
         prenom_clt Char (50) ,
-        email      Char (50)
-	,CONSTRAINT Client_PK PRIMARY KEY (id_clt)
+        email      Char (50) ,
+
+	CONSTRAINT Client_PK PRIMARY KEY (id_clt)
 )ENGINE=InnoDB;
 
 
@@ -21,8 +22,9 @@ CREATE TABLE Client(
 #------------------------------------------------------------
 
 CREATE TABLE Type_Produit(
-        id_type_prod Int(10) NOT NULL AUTO_INCREMENT
-	,CONSTRAINT Type_Produit_PK PRIMARY KEY (id_type_prod)
+        id_type_prod Int(10) NOT NULL AUTO_INCREMENT,
+
+        CONSTRAINT Type_Produit_PK PRIMARY KEY (id_type_prod)
 )ENGINE=InnoDB;
 
 
@@ -108,8 +110,9 @@ CREATE TABLE Typo(
 
 CREATE TABLE Type_taille(
         id_typeTaille  Int(10) NOT NULL AUTO_INCREMENT,
-        nom_typeTaille Char (50)
-	,CONSTRAINT Type_taille_PK PRIMARY KEY (id_typeTaille)
+        nom_typeTaille Char (50) ,
+	
+        CONSTRAINT Type_taille_PK PRIMARY KEY (id_typeTaille)
 )ENGINE=InnoDB;
 
 
@@ -120,15 +123,22 @@ CREATE TABLE Type_taille(
 CREATE TABLE Produit(
         id_prod       Int(10) NOT NULL AUTO_INCREMENT,
         nom_prod      Char (50) ,
-        desc_prod     Varchar (300) ,
-        stock_prod    Int(10) ,
-        Activer       Boolean  NOT NULL ,
-        id_type_prod  Int (10) NOT NULL ,
-        id_typeTaille Int (10) NOT NULL
-	,CONSTRAINT Produit_PK PRIMARY KEY (id_prod)
 
-	,CONSTRAINT Produit_Type_Produit_FK FOREIGN KEY (id_type_prod) REFERENCES Type_Produit(id_type_prod)
-	,CONSTRAINT Produit_Type_taille0_FK FOREIGN KEY (id_typeTaille) REFERENCES Type_taille(id_typeTaille)
+        desc_prod     Varchar (255) ,
+        motcle        Varchar (255) ,
+        image_prod    Varchar (50)  ,
+            
+        id_type_prod  Int (10) NOT NULL ,
+        id_typeTaille Int (10) NOT NULL ,
+	
+        inverser Boolean  NOT NULL ,
+
+        affichageHome Boolean  NOT NULL ,
+
+        CONSTRAINT Produit_PK PRIMARY KEY (id_prod),
+
+	CONSTRAINT Produit_Type_Produit_FK FOREIGN KEY (id_type_prod) REFERENCES Type_Produit(id_type_prod),
+	CONSTRAINT Produit_Type_taille0_FK FOREIGN KEY (id_typeTaille) REFERENCES Type_taille(id_typeTaille)
 )ENGINE=InnoDB;
 
 
@@ -183,6 +193,8 @@ CREATE TABLE Achat(
         qte             int(10) NOT NULL,
         choix_couleur   Char(50),
         choix_taille    Char(50),
+
+        inverser Boolean  NOT NULL ,
 
         id_cmd          Int(10) NOT NULL,
         id_prod         Int(10) NOT NULL,

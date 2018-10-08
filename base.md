@@ -9,7 +9,7 @@
 
 	<body>
 		<!-- Nav -->
-		<?php include ' assets/php/nav.php' ?>
+		<?php include 'assets/php/nav.php' ?>
 
 		<!-- Main -->
 		<div class="container">
@@ -19,7 +19,7 @@
 		</div>
 		
 		<!-- Footer -->
-		<? include 'assets/php/footer.php'; ?>
+		<?php include 'assets/php/footer.php'; ?>
 
 		<!--JavaScript at end of body for optimized loading-->
 		<?php include 'assets/php/script_end_body.php'; ?>

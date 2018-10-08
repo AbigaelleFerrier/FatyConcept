@@ -12,46 +12,17 @@
 		<?php include 'assets/php/header.php'; ?>
 
 		<!-- Nav -->
-		<?php include 'assets/php/nav.php' ?>
+		<?php include 'assets/php/nav.php'; ?>
 
 
 		<!-- Main -->
 		<div class="container">
-
 			<div class="row">
-			<?php
-				for ($i=0; $i < 10 ; $i++) { 
-			?>
 			
-				<div class="col s4">
+			<?php include 'affichage/affichage.Produit.php'; ?>
 
-					<div class="card">
-					    <div class="card-image waves-effect waves-block waves-light">
-					      <img class="activator" src="img/produit/cochon_fr.jpg">
-					       <span class="card-title">cochon_fr</span>
-					    </div>
 
-					    <div class="card-content">
-				          	<p>I am a very simple card. I am good at containing small bits of information.</p>
-				        </div>
-
-				        <div class="card-action">
-				        	<a class="waves-effect waves-light btn">Voir le produit</a>
-				        </div>
-
-					    <div class="card-reveal">
-					      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-					      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-					    </div>
-					</div>
-
-				</div>
-
-			<?php
-				}
-			?>
 			</div>
-
       	</div>
 
 
@@ -59,7 +30,14 @@
 		<?php include 'assets/php/footer.php'; ?>
 
 		<!--JavaScript at end of body for optimized loading-->
-		<?php include 'assets/php/script_end_body.php'; ?>
+		<?php 
+			include 'assets/php/script_end_body.php';
+
+			if (isset($_GET['err']) && $_GET['err']== 11) {
+				echo '<script type="text/javascript">alert("Ce produit n\'est plus disponible ou à été retiré du catalogue ")</script>';
+			}
+		?>
+		
 	</body>
 </html>
  

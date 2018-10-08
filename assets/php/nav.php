@@ -21,19 +21,11 @@
 	<div class="container nav-wrapper">
 		<a href="#" class="brand-logo elephant">Faty Concept</a>
 
-		<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+		<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
 		
 
 		<ul class="right hide-on-med-and-down">
-			<li><a href="index.php">Accueil</a></li>
-			<li><a href="">Lorem</a></li>
-			<li><a href="">Lorem</a></li>
-			<li><a href="contact.php">Contact</a></li>
-
-			<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-
-			<!-- Recherche -->
-			<li><a class="waves-effect waves-light btn btn-nav modal-trigger" href="#modal1">Recherche<i class="material-icons right">search</i></a></li>
+			<?php include 'assets/php/linkNav.php'?>
 		</ul>
 	</div>
 
@@ -42,19 +34,5 @@
 
 <!-- Mobile -->
 <ul class="sidenav" id="mobile-demo">
-    <li><a href="index.php">Accueil</a></li>
-	<li><a href="">Lorem</a></li>
-	<li><a href="">Lorem</a></li>
-	<li><a href="contact.php">Contact</a></li>
+    <?php include 'linkNav.php'?>
 </ul>
-
-
-<!-- Script -->
-<script type="text/javascript">
-
-	$(document).ready(function(){
-    	$(".dropdown-trigger").dropdown();
-  	});
-
-  	
-</script>

@@ -4334,7 +4334,7 @@ nav .brand-logo {
   /* position: absolute; */
   color: #fff;
   display: inline-block;
-  font-size: 2.1rem;
+  font-size: 2.1em;
   padding: 0;
 }
 
@@ -4886,10 +4886,10 @@ small {
   left: 0;
   max-width: 100%;
   padding: 24px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.75);
   /* border-right: solid 5px #000; */
   /* border-top: solid 5px #000; */
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .card .card-content {
@@ -6109,7 +6109,7 @@ button:focus {
 
 label {
   font-size: 0.8rem;
-  color: #9e9e9e;
+  color: rgb(0, 0, 0);
 }
 
 /* Text Inputs + Textarea
@@ -9192,4 +9192,27 @@ input[type=range]::-ms-thumb {
   .btnTagRecherche {
     background: #de7226;
     margin: 0.5rem;
+  }
+
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+/* \\\\\\\\\\\\      PRODUIT       \\\\\\\\\\\ */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+  .produit {
+    background: #ececec;
+    padding: 1em;
+    margin: 2em 0em;
+  }
+
+  .h1Prod {
+    font-size: 3.5em;
+    font-variant-caps: petite-caps;
+    margin: 0em;
+  }
+
+  #choixCouleurAffichage {
+    border: dashed 2px #333;
+    min-height: 4em;
+    min-width: 4em;
   }

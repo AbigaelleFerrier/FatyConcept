@@ -1938,10 +1938,10 @@ $jscomp.polyfill = function (e, r, p, m) {
       var $activeBodies = _this3.$el.children('li.active').children('.collapsible-body');
       if (_this3.options.accordion) {
         // Handle Accordion
-        $activeBodies.first().css('display', 'block');
+        $activeBodies.first().css('display', 'flex');
       } else {
         // Handle Expandables
-        $activeBodies.css('display', 'block');
+        $activeBodies.css('display', 'flex');
       }
       return _this3;
     }
@@ -2045,7 +2045,7 @@ $jscomp.polyfill = function (e, r, p, m) {
 
           anim.remove($body[0]);
           $body.css({
-            display: 'block',
+            display: 'flex',
             overflow: 'hidden',
             height: 0,
             paddingTop: '',
