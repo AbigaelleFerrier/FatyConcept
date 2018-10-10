@@ -7,10 +7,8 @@
 		$traitement -> bindParam(1, $_GET['val']);
 		$traitement -> execute();
 		if ($row = $traitement->fetch()) {
-
 			$row['prix_taille'] *= $_GET['qte'];
-
-			if ($_GET['recto'] == true) {
+			if ($_GET['recto'] == 'true') {
 				$row['prix_taille'] *= 2;	
 			}
 			echo $row['prix_taille'] . " €";
@@ -22,5 +20,4 @@
 	else {
 		echo "02- Erreur Prix";
 	}
-	
 ?>

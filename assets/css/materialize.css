@@ -9216,3 +9216,11 @@ input[type=range]::-ms-thumb {
     min-height: 4em;
     min-width: 4em;
   }
+
+  .noMargeBottom {
+    margin-bottom: auto;
+  }
+
+  .noMargeTop {
+    margin-top: 0em;
+  }

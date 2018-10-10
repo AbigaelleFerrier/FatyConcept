@@ -1,4 +1,4 @@
-<div id="modal1" class="modal">
+<div id="rechercheModal" class="modal">
 	<div class="modal-content">
 		<h4>Recherche</h4>
 
@@ -16,7 +16,15 @@
 
 
 <datalist id="modalTagRechercheList">
-  <option value="Harley">
-  <option value="Moto">
-  <option value="Custom">
+	<?php
+		$req = "SELECT * FROM soustype";
+		$traitementDatalist = $connect ->prepare($req);
+		$traitementDatalist -> execute();
+		while($row = $traitementDatalist->fetch()) {
+			echo '<option value="'. $row['nom_tag'] .'">';	
+		}
+	?>
 </datalist>
+
+
+

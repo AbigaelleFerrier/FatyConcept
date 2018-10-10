@@ -47,7 +47,7 @@
 
 		$rowProd = $traitementProd->fetch();
 
-			echo '<title>'. $rowProd['nom_prod'] .'</title>';
+			echo '<title>'. $rowProd['nom_prod'] . ' - Faty Concept' .'</title>';
 			echo '<meta name="keywords" 	content="'. $rowProd['motcle'] .'">';
 			echo '<meta name="Description" 	content="'. $rowProd['desc_prod'] .'">';
 	}

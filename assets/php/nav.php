@@ -36,3 +36,8 @@
 <ul class="sidenav" id="mobile-demo">
     <?php include 'linkNav.php'?>
 </ul>
+
+<!-- Modal -->
+
+<?php include 'assets/php/modal_recherche.php' ?>
+<?php include 'assets/php/modal_panier.php' ?>

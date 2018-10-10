@@ -14,7 +14,7 @@
 		<!-- Main -->
 		<div class="container">
 
-			<div class="row produit">
+			<div class="row produit noMargeBottom">
 				<div class="col m4 s12">
 					    <img class="responsive-img z-depth-3" src="img/produit/<?php echo $rowProd['image_prod']; ?>">
 				</div>
@@ -114,13 +114,13 @@
 								<!-- Qte -->
 								<div class="row">
 									<div class="col s1">
-										<button class="btn">-</button>
+										<a href="#!" onclick="addDown(-1)" class="btn">-</a>
 									</div>
 									<div class="col offset-m1 m3 offset-s1 s5">
 										<input value="1" id="qte" type="number" onchange="if (this.value < 1) {this.value = 1}; affichePrixOnProduit()" class="validate">
 									</div>
 									<div class="col s1">
-										<button class="btn">+</button>
+										<a href="#!" onclick="addDown(1)" class="btn">+</a>
 									</div>																		
 								</div>
 
@@ -144,6 +144,7 @@
 											<div class="col s12">							
 												<p>
 										    		<label class="tooltipped" data-position="bottom" data-tooltip="Cochez cette case pour commander votre stickers avec effet miroir inversé. Attention, un produit avec tu texte sera illisible.">
+
 										        		<input onchange="affichePrixOnProduit()" id="inverse" type="radio"  name="groupInverse"/>
 										        		<span>Inverser</span>
 										      		</label>
@@ -153,6 +154,7 @@
 											<div class="col s12">							
 												<p>
 										    		<label class="tooltipped" data-position="bottom" data-tooltip="Cochez cette case pour commander votre stickers à la fois recto et verso (2 stickers)">
+
 										        		<input onchange="affichePrixOnProduit()" id="rectoVerso" type="radio" name="groupInverse" />
 										        		<span>Recto / Verso</span>
 										      		</label>
@@ -163,9 +165,12 @@
 							</div>
 						</div>
 					</form>
-					<a class="waves-effect waves-light btn right" >Ajouter au panier</a>
-						
+					
 				</div>
+				
+			</div>
+			<div class="row produit noMargeTop">
+				<a class="waves-effect waves-light btn right" >Ajouter au panier</a>
 			</div>
 		</div>
 		

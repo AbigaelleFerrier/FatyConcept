@@ -58,6 +58,10 @@
       xhr.send(); 
     }
 
-</script>
+    function addDown(val) {
+      val = parseInt(document.getElementById('qte').value) + val;
+      if (val >= 1) {document.getElementById('qte').value = val;}
+      affichePrixOnProduit();
+    }
 
-<?php include 'assets/php/modal_recherche.php' ?>
+</script>
