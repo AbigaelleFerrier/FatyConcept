@@ -15,7 +15,7 @@
 		<?php include 'assets/php/header.php'; ?>
 
 		<!-- Nav -->
-		<?php include 'assets/php/nav.php' ?>
+		<?php include 'assets/php/nav&modal.php' ?>
 
 		<!-- Main -->
 		<div class="container">

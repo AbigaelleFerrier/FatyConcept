@@ -1,9 +1,38 @@
 <script type="text/javascript" src="assets/js/materialize.min.js"></script>
 
 <script type="text/javascript">
-	
+  
+	/* Connexion */
+  function connexion() {
+    console.log("AAA");
+    var xhr = new XMLHttpRequest(); 
+    xhr.open("GET", "assets/php/ajax/connexion.ajax.php?email="+ document.getElementById('email').value + "&pwd=" + document.getElementById('pwd').value);
+    xhr.onreadystatechange = function(){
+      if (xhr.readyState == 4 && xhr.status == 200){
+        if(xhr.responseText == "okC") {
+          console.log("OKC");
+          instanceConnexion.close();
+          M.toast({html: 'Connexion réussi'});
+        }
+        else if (xhr.responseText == "okA") {
+          console.log("OKA");
+          instanceConnexion.close();
+          M.toast({html: 'Connexion ADMIN réussi'});
+        }
+        else if (xhr.responseText == "err01") {
+          document.getElementById('outputErr').innerHTML = "Email ou mot de passe invalide";
+        }
+        else {
+          document.getElementById('outputErr').innerHTML = xhr.responseText;
+        }
+      }
+    };
+    xhr.send(); 
+  }
+
+
 	/* Nav */
-	$(document).ready(function(){
+	  $(document).ready(function(){
     	$('.sidenav').sidenav();
   	});
 
@@ -33,7 +62,12 @@
     });
 
 
+<?php
+  $path = $_SERVER['PHP_SELF'];
+  $file = basename ($path);
 
+  if ($file == "produit.php") {
+?>
     /* PRODUIT */
 
     function affichePrixOnProduit() {
@@ -63,5 +97,55 @@
       if (val >= 1) {document.getElementById('qte').value = val;}
       affichePrixOnProduit();
     }
+
+    function ajoutModifPanier() {
+      var xhr = new XMLHttpRequest();
+
+      var link =  "assets/php/ajax/ajoutModifPanier.ajax.php?";
+          link += "idP="  + <?php echo $_GET["ref"]; ?>;
+          link += "&qte=" + document.getElementById('qte').value;
+          
+          if (document.getElementById('couleur')) {
+            link += "&couleur=" + document.getElementById('couleur').value;
+          }
+          if (document.getElementById('taille')) {
+            link += "&taille=" + document.getElementById('taille').value;
+          }
+          if (document.getElementById('option')) {
+            if (document.getElementById('auccun').value) {
+              link += "&option=nA";
+            }
+            else if (document.getElementById('inverse').value) {
+              link += "&option=inv";
+            }
+            else if (document.getElementById('rectoVerso').value) {
+              link += "option=RV";
+            }
+            else {
+              link += "option=err";
+            }
+          }
+          
+
+
+      xhr.open("GET", link);
+      xhr.onreadystatechange = function(){
+        if (xhr.readyState == 4 && xhr.status == 200){
+          if (xhr.responseText == "err01") { /*connexion erreur*/
+            var docModal = document.getElementById('connexionModal');
+            var instanceConnexion = M.Modal.getInstance(docModal);
+            instanceConnexion.open();
+          }
+          else if (xhr.responseText == "err02") {
+
+          }
+          else {
+            M.toast({html: 'Produit ajouter !'});
+          }          
+        }
+      };
+      xhr.send(); 
+    }
+<?php } ?>
 
 </script>

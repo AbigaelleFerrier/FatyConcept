@@ -1,4 +1,5 @@
-<?php include 'assets/php/start.php' ?>
+<?php include 'assets/php/start.php'; ?>
+
 
 <!DOCTYPE html>
 
@@ -9,7 +10,7 @@
 
 	<body>
 		<!-- Nav -->
-		<?php include 'assets/php/nav.php'; ?>
+			<?php include 'assets/php/nav&modal.php'; ?>
 
 		<!-- Main -->
 		<div class="container">
@@ -60,7 +61,7 @@
 												$traitementCoul -> execute();							
 										
 												echo '<div class="input-field col m9 s12">';
-												    echo '<select onchange="afficheCouleurOnProduit(this.value)">';
+												    echo '<select id="couleur" onchange="afficheCouleurOnProduit(this.value)">';
 												    	$i = true;
 												     	while($rowCoul = $traitementCoul->fetch()) {
 												     		// Première couleur //
@@ -131,35 +132,37 @@
 								<!-- Inverser -->
 								<?php
 									if ($rowProd['inverser']) {
-										echo '
-											<div class="col s12">							
-												<p>
-										    		<label>
-										        		<input onchange="affichePrixOnProduit()" id="auccun" type="radio"  name="groupInverse" checked />
-										        		<span>Auccun option</span>
-										      		</label>
-										    	</p>
-											</div>';
-										echo '
-											<div class="col s12">							
-												<p>
-										    		<label class="tooltipped" data-position="bottom" data-tooltip="Cochez cette case pour commander votre stickers avec effet miroir inversé. Attention, un produit avec tu texte sera illisible.">
+										echo "<div id='option'>";
+											echo '
+												<div class="col s12">							
+													<p>
+											    		<label>
+											        		<input onchange="affichePrixOnProduit()" id="auccun" type="radio"  name="groupInverse" checked />
+											        		<span>Auccun option</span>
+											      		</label>
+											    	</p>
+												</div>';
+											echo '
+												<div class="col s12">							
+													<p>
+											    		<label class="tooltipped" data-position="bottom" data-tooltip="Cochez cette case pour commander votre stickers avec effet miroir inversé. Attention, un produit avec tu texte sera illisible.">
 
-										        		<input onchange="affichePrixOnProduit()" id="inverse" type="radio"  name="groupInverse"/>
-										        		<span>Inverser</span>
-										      		</label>
-										    	</p>
-											</div>';
-										echo '
-											<div class="col s12">							
-												<p>
-										    		<label class="tooltipped" data-position="bottom" data-tooltip="Cochez cette case pour commander votre stickers à la fois recto et verso (2 stickers)">
+											        		<input onchange="affichePrixOnProduit()" id="inverse" type="radio"  name="groupInverse"/>
+											        		<span>Inverser</span>
+											      		</label>
+											    	</p>
+												</div>';
+											echo '
+												<div class="col s12">							
+													<p>
+											    		<label class="tooltipped" data-position="bottom" data-tooltip="Cochez cette case pour commander votre stickers à la fois recto et verso (2 stickers)">
 
-										        		<input onchange="affichePrixOnProduit()" id="rectoVerso" type="radio" name="groupInverse" />
-										        		<span>Recto / Verso</span>
-										      		</label>
-										    	</p>
-											</div>';			 						
+											        		<input onchange="affichePrixOnProduit()" id="rectoVerso" type="radio" name="groupInverse" />
+											        		<span>Recto / Verso</span>
+											      		</label>
+											    	</p>
+												</div>';
+										echo "</div>";			 						
 		 							}
 		 						?>
 							</div>
@@ -170,7 +173,7 @@
 				
 			</div>
 			<div class="row produit noMargeTop">
-				<a class="waves-effect waves-light btn right" >Ajouter au panier</a>
+				<a class="waves-effect waves-light btn right" onclick="ajoutModifPanier();" >Ajouter au panier</a>
 			</div>
 		</div>
 		

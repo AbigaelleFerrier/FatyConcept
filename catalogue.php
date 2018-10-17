@@ -9,7 +9,7 @@
 
 	<body>
 		<!-- Nav -->
-		<?php include 'assets/php/nav.php'; ?>
+		<?php include 'assets/php/nav&modal.php'; ?>
 
 		<!-- Main -->
 		<div class="container" style="margin-top: 2em">

@@ -18,7 +18,7 @@
 	} 
 
 	Session [
-		admin : ok / client : [ id ]
+		admin : ok // client : [ id ]
 
 		pannier :
 			produit [ idP , Qte , Couleur, Taille , option , typo]
