@@ -3,24 +3,35 @@
 <script type="text/javascript">
   
 	/* Connexion */
+  function openModalConnexion() {
+    var docModal = document.getElementById('connexionModal');
+    var instanceConnexion = M.Modal.getInstance(docModal);
+    instanceConnexion.open();
+  }
+
   function connexion() {
-    console.log("AAA");
+    var docModal = document.getElementById('connexionModal');
+    var instanceConnexion = M.Modal.getInstance(docModal);
+
     var xhr = new XMLHttpRequest(); 
     xhr.open("GET", "assets/php/ajax/connexion.ajax.php?email="+ document.getElementById('email').value + "&pwd=" + document.getElementById('pwd').value);
     xhr.onreadystatechange = function(){
       if (xhr.readyState == 4 && xhr.status == 200){
         if(xhr.responseText == "okC") {
-          console.log("OKC");
           instanceConnexion.close();
           M.toast({html: 'Connexion réussi'});
         }
         else if (xhr.responseText == "okA") {
-          console.log("OKA");
           instanceConnexion.close();
           M.toast({html: 'Connexion ADMIN réussi'});
         }
         else if (xhr.responseText == "err01") {
           document.getElementById('outputErr').innerHTML = "Email ou mot de passe invalide";
+        }
+
+        else if (xhr.responseText == "OK1") {
+          instanceConnexion.close();
+          M.toast({html: 'Vous êtes deja connecter'});
         }
         else {
           document.getElementById('outputErr').innerHTML = xhr.responseText;

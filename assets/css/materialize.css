@@ -4333,7 +4333,7 @@ nav .sidenav-trigger i {
 nav .brand-logo {
   /* position: absolute; */
   color: #fff;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 2.1em;
   padding: 0;
 }
@@ -9106,6 +9106,11 @@ input[type=range]::-ms-thumb {
 
   .btn-nav {
     background-color: rgba(222, 114, 38, 0);
+  }
+
+  .iUP i {
+    position: relative;
+    top: -16px;
   }
 
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */

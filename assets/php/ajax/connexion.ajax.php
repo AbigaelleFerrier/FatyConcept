@@ -41,7 +41,7 @@
 		*/
 	}
 	else {
-		echo "Vous êtes deja connecter ";
+		echo "OK1";
 	}
 
 ?>
