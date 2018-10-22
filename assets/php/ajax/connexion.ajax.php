@@ -31,14 +31,14 @@
 			}			
 		}
 
-		/*
-		if(isset($_GET['to'])){
-			header('Location:' . $_GET['to']);
-		}
-		else {
-			header('Location:index.php');
-		}
-		*/
+		
+		// if(isset($_GET['to'])){
+		// 	header('Location:' . $_GET['to']);
+		// }
+		// else {
+		// 	header('Location:index.php');
+		// }
+		
 	}
 	else {
 		echo "OK1";

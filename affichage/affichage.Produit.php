@@ -34,9 +34,14 @@
 
 	
 	
+	$i = 1;
 
 	while($row = $traitement->fetch()) {
-		echo '<div class="col s4">';
+		if($i == 1) {
+			echo '<div class="row">';
+		}
+		
+		echo '<div class="col m4 s6">';
 			echo '<a href="produit.php?ref='. $row['id_prod'] .'">';
 				echo '<div class="card">';
 				    echo '<div class="card-image">';
@@ -50,6 +55,15 @@
 				echo '</div>';
 			echo '</a>';
 
+		echo '</div>';
+		
+		if($i == 3) {
+			echo '</div>';
+		}
+		if ($i == 3) {$i=1;}
+		else { $i++;}
+	}
+	if($i != 3) {
 		echo '</div>';
 	}
 

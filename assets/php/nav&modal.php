@@ -1,21 +1,3 @@
-<!-- Structure Sous-Nav -->
-	<ul id="dropdown1" class="dropdown-content" style="width: auto !important;">
-	  	<div class="row">
-	  		<div class="col s6">
-	  			<li><a href="">Lorem</a></li>
-				<li><a href="">Lorem</a></li>
-				<li><a href="">Lorem</a></li>
-				<li><a href="">Lorem</a></li>
-	  		</div>
-	  		<div class="col s6">
-	  			<li><a href="">Lorem Helloeeeeeeee</a></li> 
-				<li><a href="">Lorem</a></li>
-				<li><a href="">Lorem</a></li>
-				<li><a href="">Lorem</a></li>
-	  		</div>	
-	  	</div>
-	</ul>
-
 <!-- NAV -->
     <nav class="nav-extended scrollspy" role="navigation" id="nav">
 

@@ -1,13 +1,18 @@
+	<!-- Mobile -->
+	<div class="hide-on-large-only show-on-medium-and-down">
+		<?php include 'assets/php/navConnexion.php'?>
+		<hr>
+	</div>
+
 
 	<li><a href="index.php">Accueil</a></li>
 	<li><a href="catalogue.php">Catalogue</a></li>
 	<li><a href="">Lorem</a></li>
 	<li><a href="contact.php">Contact</a></li>
 
-	<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-
 	<!-- Mobile -->
 	<div class="hide-on-large-only show-on-medium-and-down">
+		
 		<hr>
 		<!-- Recherche -->
 		<li class=""><a class="modal-trigger" href="#rechercheModal">Recherche <i class="material-icons right">search</i></a></li>

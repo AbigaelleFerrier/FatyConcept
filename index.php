@@ -1,4 +1,4 @@
-<?php include 'assets/php/start.php' ?>
+<?php include 'assets/php/start.php'; ?>
 
 <!DOCTYPE html>
 

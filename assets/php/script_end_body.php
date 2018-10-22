@@ -14,32 +14,72 @@
     var instanceConnexion = M.Modal.getInstance(docModal);
 
     var xhr = new XMLHttpRequest(); 
-    xhr.open("GET", "assets/php/ajax/connexion.ajax.php?email="+ document.getElementById('email').value + "&pwd=" + document.getElementById('pwd').value);
+    xhr.open("GET", "assets/php/ajax/connexion.ajax.php?email="+ 
+      document.getElementById('email').value + "&pwd=" + 
+      document.getElementById('pwd').value);
+    
+    console.log('a');
+
     xhr.onreadystatechange = function(){
+      console.log('aZ');
       if (xhr.readyState == 4 && xhr.status == 200){
         if(xhr.responseText == "okC") {
-          instanceConnexion.close();
-          M.toast({html: 'Connexion réussi'});
+          <?php 
+            $path  = $_SERVER['PHP_SELF']; 
+            $file  = basename ($path);
+            
+            if($file == 'produit.php') { 
+              $file .= '?ref='. $_GET['ref'] . '&co=ok"';
+            }
+            else {
+              $file .= '?co=ok"';  
+            }
+            
+            echo 'document.location.href="'. $file ;
+          ?>
+
+            
         }
         else if (xhr.responseText == "okA") {
-          instanceConnexion.close();
-          M.toast({html: 'Connexion ADMIN réussi'});
+          console.log('c');
+          document.location.href="admin.php";
         }
         else if (xhr.responseText == "err01") {
+          console.log('d');
           document.getElementById('outputErr').innerHTML = "Email ou mot de passe invalide";
         }
 
         else if (xhr.responseText == "OK1") {
+          console.log('e');
           instanceConnexion.close();
-          M.toast({html: 'Vous êtes deja connecter'});
+          M.toast({html: 'Vous êtes deja connecté(e)'});
         }
         else {
+          console.log('f');
           document.getElementById('outputErr').innerHTML = xhr.responseText;
         }
       }
     };
     xhr.send(); 
   }
+
+
+  function okCo() {
+     M.toast({html: 'Vous êtes maintenant connecté(e)'});
+  }
+  function dCo() {
+     M.toast({html: 'Vous êtes maintenant déconnecté(e)'});
+  }
+
+  <?php 
+    if (isset($_GET['co']) && $_GET['co']=='ok' && (isset($_SESSION['client']) || isset($_SESSION['admin']))) {
+      echo "okCo();";  
+    }
+    if (isset($_GET['co']) && $_GET['co']=='dc' && (!isset($_SESSION['client']) || !isset($_SESSION['admin']))) {
+      echo "dCo();";  
+    }
+     
+  ?>
 
 
 	/* Nav */
@@ -71,6 +111,9 @@
     $(document).ready(function(){
       $(".dropdown-trigger").dropdown();
     });
+
+    /* Tabs */
+    var instance = M.Tabs.init(document.getElementById('tabs'), _setupSwipeableTabs = true);
 
 
 <?php
@@ -148,9 +191,9 @@
             instanceConnexion.open();
           }
           else if (xhr.responseText == "err02") {
-
+            M.toast({html: 'err02'});
           }
-          else {
+          else if (xhr.responseText == "OK"){
             M.toast({html: 'Produit ajouter !'});
           }          
         }
