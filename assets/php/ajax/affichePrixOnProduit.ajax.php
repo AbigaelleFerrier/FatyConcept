@@ -2,7 +2,7 @@
 	include '../PDO.php';
 
 	if (isset($_GET['val']) && isset($_GET['qte']) && isset($_GET['recto'])) {
-		$req = "SELECT * FROM Taille WHERE id_Taille = ?";
+		$req = "SELECT * FROM taille WHERE id_Taille = ?";
 		$traitement = $connect ->prepare($req);
 		$traitement -> bindParam(1, $_GET['val']);
 		$traitement -> execute();

@@ -1,5 +1,6 @@
 <?php
-	
+try {
+
 	// On regarde le fichier
 	$path = $_SERVER['PHP_SELF'];
 	$file = basename ($path);
@@ -26,10 +27,41 @@
 		}
 	}
 	else if($file == "catalogue.php") {
-		
-		$req = "SELECT * FROM produit WHERE affichageHome = 1 ORDER BY id_prod DESC";
-		$traitement  = $connect ->prepare($req);
+		if (isset($_GET['motcle'])) 	{	$motcle 	= '%'. $_GET['motcle'] .'%';	}
+		else 							{	$motcle 	= "%";							}
+		if (isset($_GET['nomProduit'])) {	$nomProduit = '%'. $_GET['nomProduit'] .'%';}
+		else 							{	$nomProduit = "%";							}
+
+		$req = "SELECT * 	FROM 	`produit` 
+							WHERE ( `desc_prod` 		LIKE ? 
+							OR 		`motcle` 			LIKE ? ) 
+							AND 	`nom_prod`			LIKE ?";
+
+		if (isset($_GET['ctg'])) {
+			$req .= "		AND 	`id_type_prod`		= ?
+							AND 	`Activer` 			= 1 
+							ORDER BY id_prod DESC";
+
+			$traitement  = $connect ->prepare($req);
+
+			$traitement -> bindParam(1, $motcle);
+			$traitement -> bindParam(2, $motcle);
+			$traitement -> bindParam(3, $nomProduit);
+			$traitement -> bindParam(4, $_GET['ctg']);
+
+		}
+		else {
+			$req .= "		AND 	`Activer` 			= 1 
+							ORDER BY id_prod DESC";
+
+			$traitement  = $connect ->prepare($req);
+
+			$traitement -> bindParam(1, $motcle);
+			$traitement -> bindParam(2, $motcle);
+			$traitement -> bindParam(3, $nomProduit);
+		}		
 		$traitement -> execute();
+
 	}
 
 	
@@ -66,5 +98,8 @@
 	if($i != 3) {
 		echo '</div>';
 	}
-
+}
+catch (PDOException $e) {
+	echo 'Connexion échouée : ' . $e->getMessage();
+}
 ?>

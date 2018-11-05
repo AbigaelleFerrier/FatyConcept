@@ -2,7 +2,7 @@
 	include '../PDO.php';
 
 	if (isset($_GET['val'])) {
-		$req = "SELECT * FROM Couleur WHERE id_couleur = ?";
+		$req = "SELECT * FROM couleur WHERE id_couleur = ?";
 		$traitement = $connect ->prepare($req);
 		$traitement -> bindParam(1, $_GET['val']);
 		$traitement -> execute();

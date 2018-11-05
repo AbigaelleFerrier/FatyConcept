@@ -1,4 +1,4 @@
-<?php include 'assets/php/start.php' ?>
+<?php include 'assets/php/start.php' ;?>
 
 <!DOCTYPE html>
 
@@ -23,6 +23,9 @@
 					    <div class="collapsible-body">
 					    	<div class="row">
 					    		<?php include 'assets/php/formRecherche.php'; ?>	
+					    	</div>
+					    	<div>
+					    		<a href="#!" class="btn waves-effect waves-light" onclick="searchProduit();">Recherche</a>
 					    	</div>
 					    </div>
 				  	</li>

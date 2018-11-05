@@ -28,7 +28,6 @@
 	$file = basename ($path);
 
 	if ($file == "produit.php") {
-
 		// Référencement Produit //
 		if (isset($_GET['ref'])) {
 			$id_prod =$_GET['ref'];
@@ -37,19 +36,41 @@
 			header("Location: index.php?err=11");
 		}
 
-
-
 		$req = "SELECT * FROM produit WHERE id_prod = ?";
 		$traitementProd = $connect ->prepare($req);
 		$traitementProd -> bindParam(1, $id_prod);
 		$traitementProd -> execute();
-
-
 
 		$rowProd = $traitementProd->fetch();
 
 			echo '<title>'. $rowProd['nom_prod'] . ' - Faty Concept' .'</title>';
 			echo '<meta name="keywords" 	content="'. $rowProd['motcle'] .'">';
 			echo '<meta name="Description" 	content="'. $rowProd['desc_prod'] .'">';
+	}
+	else if ($file == "index.php") {
+		echo '<title>Faty Concept</title>';
+		echo '<meta name="keywords" 	content="">';
+		echo '<meta name="Description" 	content="">';
+	}
+	else if ($file == "catalogue.php") {
+		echo '<title>Catalogue - Faty Concept</title>';
+		echo '<meta name="keywords" 	content="">';
+		echo '<meta name="Description" 	content="">';
+	}
+	else if ($file == "lettres-adhesives.php") {
+		echo '<title>Création de lettres adhesives - Faty Concept</title>';
+		echo '<meta name="keywords" 	content="">';
+		echo '<meta name="Description" 	content="">';
+
+		$req = "SELECT * FROM typo";
+		$traitementTypo = $connect ->prepare($req);
+		$traitementTypo -> execute();
+
+		while($row = $traitementTypo->fetch()) {
+			echo($row['link_typo']);
+		} 
+	}
+	else {
+		echo '<title>'. str_replace ("-", " ", substr($file, 0, strlen($file)-4)).' - Faty Concept</title>';
 	}
 	

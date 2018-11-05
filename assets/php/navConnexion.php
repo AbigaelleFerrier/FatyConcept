@@ -7,7 +7,7 @@
 
 	}
 	else if (isset($_SESSION['admin'])) {
-		echo'<li><a href="admin.php">Mon Compte</a></li>';
+		echo'<li><a href="admin.php">Panel d\'Administrateur</a></li>';
 		echo'<li><a href="deconnexion.php">Déconnexion</a></li>';
 	}
 	else {

@@ -25,8 +25,14 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            © 2018-<?php echo date("Y");?> Fatyconcept.com
-            <a class="grey-text text-lighten-4 right" href="https://www.asheart.fr" target="blank_">Réalisation AsheArt</a>
+            <p class="grey-text text-lighten-4" style="display: contents">
+                © 2018-<?php echo date("Y");?> Fatyconcept.com
+                <div class="right">
+                    <a class="grey-text text-lighten-4 underline" href="mentions-legales.php"> Mentions Légales </a>| 
+                    <a class="grey-text text-lighten-4 underline" href="conditions-generales-de-ventes.php"> CGV </a>| 
+                    <a class="grey-text text-lighten-4 underline" href="https://www.asheart.fr" target="blank_"> Réalisation AsheArt </a>
+                </div>
+            </p>
         </div>
     </div>
 </footer>
