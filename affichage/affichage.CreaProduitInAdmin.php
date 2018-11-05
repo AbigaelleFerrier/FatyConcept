@@ -79,7 +79,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
         </div>
     </div>
     <div class="row">
-        <button class="btn" type="submit">Créé</button>
+        <button class="btn" type="submit">Créer</button>
     </div>
 </form>
 

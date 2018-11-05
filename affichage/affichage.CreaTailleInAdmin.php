@@ -2,18 +2,18 @@
 
 if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') { 
 ?>
-<form class="col s12">
+<form class="col s12" action="assets/php/form/admin/taille.form.php" method="post">
     <div class="row">
         <div class="input-field col s4">
-            <input id="nomTaille" type="text" class="validate">
+            <input id="nomTaille" name="Taille" type="text" class="validate">
             <label for="nomTaille">Nom</label>
         </div>
         <div class="input-field col s4">
-            <input id="prixTaille" type="text" class="validate">
+            <input id="prixTaille" name="prix" type="text" class="validate">
             <label for="prixTaille">prix</label>
         </div>
         <div class="col s4">
-	        <select>
+	        <select name="type">
 	            <?php
 	                $req = "SELECT * FROM type_taille";
 	                $traitement3  = $connect ->prepare($req);
@@ -26,6 +26,10 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
 	        </select>
 	        <label>Taille</label>
 	    </div>      
+    </div>
+    
+    <div class="row">
+        <button class="btn" type="submit">Créer</button>
     </div>
 </form>
 
