@@ -69,10 +69,40 @@
         vl1 = document.getElementById('pwdIns').value;
         vl2 = document.getElementById('pwdIns2').value;
 
-        if (!(vl1 != "" && vl2 != "" 
-              && vl1 != vl2)) {
+        if (!(vl1 == "" || vl2 == "") && (vl1 != vl2)) {
           M.toast({html: 'Vos mots de passe ne sont pas identiques'});
         }
+      }
+
+
+      var pssS  = 0;
+      var pssS2 = 0;
+
+      function passwordShow(obj) {
+        if (obj == 0) { 
+          obj = document.getElementById('pwdIns');
+          if (pssS == 0) {
+            obj.type = "text";
+            pssS = 1;
+          }
+          else {
+            obj.type = "password";
+            pssS = 0;
+          }
+        }
+        else {
+          obj = document.getElementById('pwdIns2');
+          if (pssS2 == 0) {
+            obj.type = "text";
+            pssS2 = 1;
+          }
+          else {
+            obj.type = "password";
+            pssS2 = 0;
+          }
+        }
+
+
       }
 
       function okCo() {
