@@ -1,7 +1,13 @@
-/*!
- * Materialize v1.0.0-rc.2 (http://materializecss.com)
- * Copyright 2014-2017 Materialize
- * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
+<?php
+   header('content-type: text/css');
+   ob_start('ob_gzhandler');
+   header('Cache-Control: max-age=31536000, must-revalidate');
+?>
+
+/*! 
+ * BASED on : Materialize v1.0.0-rc.2;
+ * Updated by : Asheart communication;
+ * All right : Ferrier cirill ;
  */
 .materialize-red {
   background-color: #e51c23 !important;
@@ -4870,6 +4876,7 @@ small {
 }
 
 .card .card-image img {
+  padding: 5px;
   display: block;
   border-radius: 2px 2px 0 0;
   position: relative;
@@ -9136,6 +9143,7 @@ input[type=range]::-ms-thumb {
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
   
   #header {
+    height: 35vw;
     background-color: rgb(0, 0, 0);
     background-image: url('../../img/header.jpg');
     background-position:  center;

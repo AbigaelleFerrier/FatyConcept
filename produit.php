@@ -17,7 +17,7 @@
 
 			<div class="row produit noMargeBottom">
 				<div class="col m4 s12">
-					    <img class="responsive-img z-depth-3" src="img/produit/<?php echo $rowProd['image_prod']; ?>">
+					    <img class="responsive-img" src="img/produit/<?php echo $rowProd['image_prod']; ?>">
 				</div>
 				<div class="col m8 s12">
 					<?php 

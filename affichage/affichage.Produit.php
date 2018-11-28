@@ -68,36 +68,39 @@ try {
 	
 	$i = 1;
 
+		// if($i == 1) {
+		// 	echo '<div class="row">';
+		// }
+
+		// if($i == 3) {
+		// 	echo '</div>';
+		// }
+		// if ($i == 3) {$i=1;}
+		// else { $i++;}
+
+	// if($i != 3) {
+	// 	echo '</div>';
+	// }
+	// echo '</div>';
+
 	while($row = $traitement->fetch()) {
-		if($i == 1) {
-			echo '<div class="row">';
-		}
-		
-		echo '<div class="col m4 s6">';
+		echo '<div class="col l4 m4 s6">';
 			echo '<a href="produit.php?ref='. $row['id_prod'] .'">';
 				echo '<div class="card">';
 				    echo '<div class="card-image">';
-				    	echo '<img class="activator" src="img/produit/'. $row['image_prod'] .'">';
-				        echo '<span class="card-title">'. $row['nom_prod'].'</span>';
+				    /**/echo '<img class="activator" src="img/produit/'. $row['image_prod'] .'">';
+				    /**/echo '<span class="card-title">'. $row['nom_prod'].'</span>';
 				    echo '</div>';
 
 			        echo '<div class="card-action">';
-			        	echo '<a href="produit.php?ref='. $row['id_prod'] .'" class="waves-effect waves-light btn">Voir le produit</a>';
+			        /**/echo '<a href="produit.php?ref='. $row['id_prod'] .'" class="waves-effect waves-light btn">Voir le produit</a>';
 			        echo '</div>';
 				echo '</div>';
 			echo '</a>';
 
 		echo '</div>';
-		
-		if($i == 3) {
-			echo '</div>';
-		}
-		if ($i == 3) {$i=1;}
-		else { $i++;}
 	}
-	if($i != 3) {
-		echo '</div>';
-	}
+	
 }
 catch (PDOException $e) {
 	echo 'Connexion échouée : ' . $e->getMessage();

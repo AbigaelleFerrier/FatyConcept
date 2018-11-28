@@ -27,9 +27,10 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mdp']) && i
 
 		$traitement -> bindParam(1 , $_POST['nom']);
 		$traitement -> bindParam(2 , $_POST['prenom']);
-		$traitement -> bindParam(3 , $_POST['mdp']);
-		$traitement -> bindParam(4 , $_POST['adresse']);
-		$traitement -> bindParam(5 , $tel);
+		$traitement -> bindParam(3 , $_POST['email']);
+		$traitement -> bindParam(4 , $_POST['mdp']);
+		$traitement -> bindParam(5 , $_POST['adresse']);
+		$traitement -> bindParam(6 , $tel);
 
 		$traitement -> execute();
 

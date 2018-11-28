@@ -2,8 +2,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="assets/css/main.css">
-<link type="text/css" rel="stylesheet" href="assets/css/materialize.css"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="assets/css/materialize.php"  media="screen,projection"/>
 <!-- <link type="text/css" rel="stylesheet" href="assets/css/nouislider.css"> -->
 
 <!--Let browser know website is optimized for mobile-->

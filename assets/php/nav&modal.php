@@ -1,12 +1,14 @@
 <!-- NAV -->
     <nav class="nav-extended scrollspy row" role="navigation" id="nav">
-    	<div class="col s2" style="height: 0vw;">
-    		<img src="img/logo.svg" class="brand-logo" style="height: 10vw;padding: 1vw 0vw 1vw 5vw;">
-    	</div>
+    	<!-- <div class="col s2">
+    		<a href="index.php">
+	    		<img src="img/logo.svg" class="brand-logo">
+    		</a>
+    	</div> -->
     	
-    	<div class="col s10">
-    		<div class="row">
-		        <div class="nav-wrapper  col s12">
+    	<div class="col s12">
+    		<div class="container">
+		        <div class="nav-wrapper container col s12">
 
 		            <a id="logo-container" href="index.php" data-target="nav-mobile" class="brand-logo elephant">Faty Concept
 		            </a>
@@ -17,7 +19,7 @@
 		            </ul>         
 		        </div>
 		        <div class="nav-content  col s12">
-		          	<ul class="tabs container tabs-transparent hide-on-med-and-down">
+		          	<ul class="tabs tabs-transparent hide-on-med-and-down">
 		            	<?php include 'assets/php/linkNav.php'?>
 		          	</ul>
 		        </div>
