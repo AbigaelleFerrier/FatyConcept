@@ -50,18 +50,37 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
 
 		$traitement -> execute();
 		
-		$req = "SELECT MAX(`id_prod`) FROM `produit`";
+		$req 		= "SELECT MAX(`id_prod`) FROM `produit`";
 		$traitement = $connect ->prepare($req);
-		$idProduit = $traitement -> lastInsertId();
+		$traitement -> execute();
+		$row 		= $traitement->fetch();
+		$idProduit 	= $row[0];
+
 		var_dump($idProduit);
+		
+		foreach ($_POST['categorie'] as $value) {
+			$req = "INSERT INTO `produit_categ` (`id_categ`, `id_prod`) VALUES (?, ?);";
+			$traitement = $connect ->prepare($req);
+			$traitement -> bindParam(1 , $value);
+			$traitement -> bindParam(2 , $idProduit);
+			$traitement -> execute();
+		}
+
+		foreach ($_POST['sous_categ'] as $value) {
+			$req = "INSERT INTO `produit_sous_categ` (`id_souscateg`, `id_prod`) VALUES (?, ?);";
+			$traitement = $connect ->prepare($req);
+			$traitement -> bindParam(1 , $value);
+			$traitement -> bindParam(2 , $idProduit);
+			$traitement -> execute();
+		}
 
 
 
-		// $nom = "../../../../img/produit/" . $_POST['file-path'];
-		// $resultat = move_uploaded_file($_FILES['file']['tmp_name'],  $nom);
-		// if ($resultat) {
-		// 	header('Location:../../../../admin.php?Transfertreussi"');
-		// }
+		$nom = "../../../../img/produit/" . $_POST['file-path'];
+		$resultat = move_uploaded_file($_FILES['file']['tmp_name'],  $nom);
+		if ($resultat) {
+			header('Location:../../../../admin.php?Transfertreussi"');
+		}
 
 	}
 	catch (PDOException $e) {
