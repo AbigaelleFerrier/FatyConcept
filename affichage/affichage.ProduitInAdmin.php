@@ -47,8 +47,8 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
 
           			// desc
 					echo '<td>
-							<input class="countChar" data-length="255" value="'. $row['desc_prod'] .'" type="text" class="validate" 
-								   onblur="modifDescProduit('. $row['id_prod'] .', this.value);">
+							<textarea class="countChar" data-length="255" value="" type="text" class="validate" 
+								   onblur="modifDescProduit('. $row['id_prod'] .', this.value);">'. $row['desc_prod'] .'</textarea>
           				  </td>';
 
           			// Mot cle
@@ -130,7 +130,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
 						 </td>';
 					// Modifier
 					echo '<td>
-							<i class="material-icons materialize-red-text" onclick="deleteProduit('. $row['id_prod'] .')">delete</i>
+							<i class="material-icons materialize-red-text" onclick="deleteSql('. $row['id_prod'] .', \'produit\')">delete</i>
 					  	  </td>';
 				echo '</tr>';
 			}

@@ -444,11 +444,11 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
     xhr.send();
   }
 
-  function deleteProduit(id) {
+  function deleteSql(id, tableSql) {
     var xhr = new XMLHttpRequest();
     //value = encodeURIComponent(value);
 
-    xhr.open("GET", "assets/php/ajax/admin/deleteProduit.ajax.php?id="+ id);
+    xhr.open("GET", "assets/php/ajax/admin/delete.ajax.php?id="+ id + "&table="+ tableSql);
       
     xhr.onreadystatechange = function(){
       if (xhr.readyState == 4 && xhr.status == 200){
@@ -541,25 +541,6 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
     xhr.send();
   }
 
-  function deleteCouleur(id) {
-    var xhr = new XMLHttpRequest();
-    //value = encodeURIComponent(value);
-
-    xhr.open("GET", "assets/php/ajax/admin/deleteCouleur.ajax.php?id="+ id);
-      
-    xhr.onreadystatechange = function(){
-      if (xhr.readyState == 4 && xhr.status == 200){
-        if (xhr.responseText == "OK") {
-          document.location.href="admin.php";
-        }
-        else {
-          M.toast({html: 'Erreur de suppresion ='+ xhr.responseText, displayLength : 100000});
-        }
-      }
-    }
-    xhr.send();
-  }
-
   // -- TypeProd -- //
 
   function modifNomTypeProd(id, value) {
@@ -600,24 +581,6 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
     xhr.send();
   }
 
-  function deleteTypeProd(id) {
-    var xhr = new XMLHttpRequest();
-    //value = encodeURIComponent(value);
-
-    xhr.open("GET", "assets/php/ajax/admin/deleteTypeProd.ajax.php?id="+ id);
-      
-    xhr.onreadystatechange = function(){
-      if (xhr.readyState == 4 && xhr.status == 200){
-        if (xhr.responseText == "OK") {
-          document.location.href="admin.php";
-        }
-        else {
-          M.toast({html: 'Erreur de suppresion ='+ xhr.responseText, displayLength : 100000});
-        }
-      }
-    }
-    xhr.send();
-  }
 
   // -- Tag -- //
 
@@ -675,25 +638,6 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
         // else {
         //   M.toast({html: 'Erreur de modification ='+ xhr.responseText, displayLength : 100000});
         // }
-      }
-    }
-    xhr.send();
-  }
-
-  function deleteTypeTaille(id) {
-    var xhr = new XMLHttpRequest();
-    //value = encodeURIComponent(value);
-
-    xhr.open("GET", "assets/php/ajax/admin/deleteTypeTaille.ajax.php?id="+ id);
-      
-    xhr.onreadystatechange = function(){
-      if (xhr.readyState == 4 && xhr.status == 200){
-        if (xhr.responseText == "OK") {
-          document.location.href="admin.php";
-        }
-        else {
-          M.toast({html: 'Erreur de suppresion ='+ xhr.responseText, displayLength : 100000});
-        }
       }
     }
     xhr.send();
@@ -757,24 +701,6 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
     xhr.send();
   }
 
-  function deleteTypeTaille(id) {
-    var xhr = new XMLHttpRequest();
-    //value = encodeURIComponent(value);
-
-    xhr.open("GET", "assets/php/ajax/admin/deleteTaille.ajax.php?id="+ id);
-      
-    xhr.onreadystatechange = function(){
-      if (xhr.readyState == 4 && xhr.status == 200){
-        if (xhr.responseText == "OK") {
-          document.location.href="admin.php";
-        }
-        else {
-          M.toast({html: 'Erreur de suppresion ='+ xhr.responseText, displayLength : 100000});
-        }
-      }
-    }
-    xhr.send();
-  }
 
   // -- Typo -- //
   function modifNomTypo(id, value) {
@@ -853,24 +779,6 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
     xhr.send();
   }
 
-  function deleteTypo(id) {
-    var xhr = new XMLHttpRequest();
-    //value = encodeURIComponent(value);
-
-    xhr.open("GET", "assets/php/ajax/admin/deleteTaille.ajax.php?id="+ id);
-      
-    xhr.onreadystatechange = function(){
-      if (xhr.readyState == 4 && xhr.status == 200){
-        if (xhr.responseText == "OK") {
-          document.location.href="admin.php#Typo";
-        }
-        else {
-          M.toast({html: 'Erreur de suppresion ='+ xhr.responseText, displayLength : 100000});
-        }
-      }
-    }
-    xhr.send();
-  }
 
   // Quick save quick load 
 

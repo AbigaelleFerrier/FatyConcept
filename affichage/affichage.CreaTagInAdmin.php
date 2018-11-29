@@ -9,6 +9,9 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
             <label for="nomTag">Nom</label>
         </div>        
     </div>
+    <div class="row">
+        <button class="btn" type="submit">Créer</button>
+    </div>
 </form>
 
 <?php } ?>

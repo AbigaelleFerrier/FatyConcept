@@ -60,6 +60,38 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
             <label>Taille</label>
         </div>
     </div>
+    <div class="row">
+        <div class="col s4">
+            <p>Categorie</p>
+            <select multiple name="categorie[]">
+                <?php
+                    $req = "SELECT * FROM categorie";
+                    $traitement = $connect ->prepare($req);
+                    $traitement -> execute();
+
+                    while($row = $traitement->fetch()) {
+                        echo '<option value="'. $row['id_categ'].'">'. $row['nom_categ'] .'</option>';
+                    } 
+                ?>
+            </select>
+            <label>Categorie</label>
+        </div>
+        <div class="col s4">
+            <p>Sous - Categorie</p>
+            <select multiple name="sous_categ[]">
+                <?php
+                    $req = "SELECT * FROM sous_categ";
+                    $traitement = $connect ->prepare($req);
+                    $traitement -> execute();
+
+                    while($row = $traitement->fetch()) {
+                        echo '<option value="'. $row['id_sousCateg'].'">'. $row['nom_sousCateg'] .'</option>';
+                    } 
+                ?>
+            </select>
+            <label>Categorie</label>
+        </div>
+    </div>
     <div class="row">  
         <div class="col s3">
             <p>
@@ -78,10 +110,21 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
             </p>
         </div>
     </div>
+
     <div class="row">
-        <button class="btn" type="submit">Créer</button>
+        <button class="btn" type="submit">Créer mon produit</button>
     </div>
 </form>
+    <div class="row">
+        <div class="col s12">
+            <hr><hr>
+            <h4>- Voir les prix - </h4>
+        </div>
+        <div class="col s12">
+            <?php include 'affichage/affichage.TailleInAdmin.php' ; ?>
+        </div>
+    </div>
+    
 
 
 <?php } ?>

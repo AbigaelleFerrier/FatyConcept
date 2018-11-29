@@ -1,19 +1,22 @@
 <?php 
 session_start();
 if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') { 
-
-    try {
+    
+    try { 
         include '../../PDO.php';
-            
-        $req = "INSERT INTO `taille` (	`id_Taille`, `Taille`, `id_typeTaille`,`prix_taille`, `poid`) 
-                            VALUES   (	NULL,?,?,?,?);";
+        
+        if (isset($_POST['couleurOuiNon'])) { $inv = 1;  }
+        else                                { $inv = 0;  }
+
+        var_dump(isset($_POST['couleurOuiNon']));
+
+        $req = "INSERT INTO `type_produit` (`id_type_prod`, `nom_type_produit`, `necessite_couleur`) 
+                               VALUES 	   (	NULL,?, ?);";
 
 		$traitement = $connect ->prepare($req);
 
-		$traitement -> bindParam(1 , $_POST['Taille']);
-		$traitement -> bindParam(2 , $_POST['type']);
-		$traitement -> bindParam(3 , $_POST['prix']);
-		$traitement -> bindParam(4 , $_POST['poid']);
+		$traitement -> bindParam(1 , $_POST['nom']);
+        $traitement -> bindParam(2 , $inv);
 
 		$traitement -> execute();
         

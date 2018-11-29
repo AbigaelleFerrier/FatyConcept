@@ -49,12 +49,19 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
 		$traitement -> bindParam(8 , $acf);
 
 		$traitement -> execute();
+		
+		$req = "SELECT MAX(`id_prod`) FROM `produit`";
+		$traitement = $connect ->prepare($req);
+		$idProduit = $traitement -> lastInsertId();
+		var_dump($idProduit);
 
-		$nom = "../../../../img/produit/" . $_POST['file-path'];
-		$resultat = move_uploaded_file($_FILES['file']['tmp_name'],  $nom);
-		if ($resultat) {
-			header('Location:../../../../admin.php?Transfertreussi"');
-		}
+
+
+		// $nom = "../../../../img/produit/" . $_POST['file-path'];
+		// $resultat = move_uploaded_file($_FILES['file']['tmp_name'],  $nom);
+		// if ($resultat) {
+		// 	header('Location:../../../../admin.php?Transfertreussi"');
+		// }
 
 	}
 	catch (PDOException $e) {

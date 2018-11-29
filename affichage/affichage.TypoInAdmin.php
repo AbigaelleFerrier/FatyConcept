@@ -51,7 +51,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
 					// 	 </td>';
 					// Del
 					echo '<td>
-							<i class="material-icons materialize-red-text" onclick="deleteTypo('. $row['id_Typo'] .')">delete</i>
+							<i class="material-icons materialize-red-text" onclick="deleteSql('. $row['id_Typo'] .', \'typo\')">delete</i>
 					  	  </td>';
 				echo '</tr>';
 			}

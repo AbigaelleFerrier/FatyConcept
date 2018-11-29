@@ -21,10 +21,13 @@
 					<li class="tab disabled"><a href=""></a></li>
 
 					<li class="tab"><a href="#produit" 		>Produit</a></li>
+
+					<li class="tab"><a href="#categorie" 	>CATEGORIE</a></li>
+
 					<li class="tab"><a href="#couleur" 		>Couleur</a></li>
 					<li class="tab"><a href="#typeProd" 	>Type de produit</a></li>
 					<li class="tab"><a href="#typeTaille" 	>Type de Taille</a></li>
-					<li class="tab"><a href="#taille" 		>Taille</a></li>
+					<li class="tab"><a href="#taille" 		>Taille / Prix / Poid</a></li>
 					<li class="tab"><a href="#typo" 		>Typo</a></li>
 					<li class="tab disabled"><a href=""></a></li>
 
@@ -50,10 +53,7 @@
 							
 						<blockquote>
 							<h5>- Ajouter un produit -</h5>
-							<div class="row">
-								
-								<?php include 'affichage/affichage.CreaProduitInAdmin.php' ; ?>
-							</div>
+							<a href="admin-creationProduit.php">Cree un nouveaux produit</a>
 						</blockquote>
 
 						<blockquote>
@@ -71,6 +71,20 @@
 								<?php include 'affichage/affichage.ProduitInAdmin.php' ; ?>
 							</div>
 						</blockquote>
+					</div>
+
+				<!-- CATEG -->
+					<!-- MODIF PRODUIT -->
+					<div class="col offset-s1 s10" id="categorie">
+						
+						
+						<h4>categorie</h4>
+							
+						<blockquote>
+							<h5>- Ajouter une categorie -</h5>
+							<a href="admin-categorie.php">Cree une nouvelle categorie (PAGE TEMPORAIRE)</a>
+						</blockquote>
+
 					</div>
 
 					<!-- Modif Couleur -->
@@ -154,7 +168,7 @@
 
 					<!-- Taille -->
 					<div class="col offset-s1 s10" id="taille">
-						<h4>Taille</h4>
+						<h4>Taille / Prix</h4>
 						<blockquote>
 							<h5>- Ajouter une taille -</h5>
 							<div class="row">

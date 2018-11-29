@@ -10,9 +10,10 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
 	<table>
         <thead>
           <tr>
-              <th>Nom</th>
-              <th>Prix</th>
-              <th>Type dont il fait partie</th>
+          	<th>Type dont il fait partie</th>
+            <th>Nom</th>
+            <th>Prix unitaire (en euro)</th>
+            <th>Poid (en gramme)</th>
           </tr>
         </thead>
 
@@ -26,18 +27,7 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
 				$row2 = $traitement2->fetch();
 
 				echo '<tr>';
-					// Nom
-					echo '<td>
-							<input value="'. $row['Taille'] .'" type="text" class="validate" 
-								   onblur="modifNomTaille('. $row['id_Taille'] .', this.value);">
-          				  </td>';
-          			// Prix
-					echo '<td>
-							<input value="'. $row['prix_taille'] .'" type="text" class="validate" 
-								   onblur="modifPrixTaille('. $row['id_Taille'] .', this.value);">
-          				  </td>';
-
-          			// Type Taille
+					// Type Taille
           			echo '<td> 
 							<div class="input-field col s12">
 								<select onchange="modifTypeTailleTaille('. $row['id_Taille'] .', this.value)">
@@ -55,9 +45,25 @@ if(isset($_SESSION['admin']) && $_SESSION['admin'] == 'ok') {
 								<label>Type de produit</label>
 							</div>
 						  </td>';
+					// Nom
+					echo '<td>
+							<input value="'. $row['Taille'] .'" type="text" class="validate" 
+								   onblur="modifNomTaille('. $row['id_Taille'] .', this.value);">
+          				  </td>';
+          			// Prix
+					echo '<td>
+							<input value="'. $row['prix_taille'] .'" type="text" class="validate" 
+								   onblur="modifPrixTaille('. $row['id_Taille'] .', this.value);">
+          				  </td>';
+
+          			echo '<td>
+							<input value="'. $row['poid'] .'" type="text" class="validate" 
+								   onblur="modifPoidTaille('. $row['id_Taille'] .', this.value);">
+          				  </td>';
+
 					// Del
 					echo '<td>
-							<i class="material-icons materialize-red-text" onclick="deleteTaille('. $row['id_Taille'] .')">delete</i>
+							<i class="material-icons materialize-red-text" onclick="deleteSql('. $row['id_Taille'] .', \'taille\')">delete</i>
 					  	  </td>';
 				echo '</tr>';
 			}
