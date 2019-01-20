@@ -1,0 +1,44 @@
+DROP TABLE IF EXISTS Client ;
+CREATE TABLE Client (id_clt_Client INT(10) AUTO_INCREMENT NOT NULL,
+nom_clt_Client CHAR(50),
+prenom_clt_Client CHAR(50),
+email_Client CHAR(50),
+PRIMARY KEY (id_clt_Client)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Produit ;
+CREATE TABLE Produit (id_prod_Produit INT(10) AUTO_INCREMENT NOT NULL,
+nom_prod_Produit CHAR(50),
+desc_prod_Produit CHAR(300),
+stock_prod_Produit INT(10),
+id_type_prod_Type_Produit **NOT FOUND**(10),
+PRIMARY KEY (id_prod_Produit)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Type_Produit ;
+CREATE TABLE Type_Produit (id_type_prod_Type_Produit INT(10) AUTO_INCREMENT NOT NULL,
+nom_type_prod_Type_Produit CHAR(50),
+PRIMARY KEY (id_type_prod_Type_Produit)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Tag ;
+CREATE TABLE Tag (id_tag_Tag INT(10) AUTO_INCREMENT NOT NULL,
+nom_tag_Tag CHAR(25),
+PRIMARY KEY (id_tag_Tag)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Produit-Tag ;
+CREATE TABLE Produit-Tag (id_prod_Produit **NOT FOUND**(10) AUTO_INCREMENT NOT NULL,
+id_tag_Tag **NOT FOUND**(10) NOT NULL,
+PRIMARY KEY (id_prod_Produit,
+ id_tag_Tag)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Achat ;
+CREATE TABLE Achat (id_clt_Client **NOT FOUND**(10) AUTO_INCREMENT NOT NULL,
+id_prod_Produit **NOT FOUND**(10) NOT NULL,
+date_achat_Achat DATE,
+PRIMARY KEY (id_clt_Client,
+ id_prod_Produit)) ENGINE=InnoDB;
+
+ALTER TABLE Produit ADD CONSTRAINT FK_Produit_id_type_prod_Type_Produit FOREIGN KEY (id_type_prod_Type_Produit) REFERENCES Type_Produit (id_type_prod_Type_Produit);
+
+ALTER TABLE Produit-Tag ADD CONSTRAINT FK_Produit-Tag_id_prod_Produit FOREIGN KEY (id_prod_Produit) REFERENCES Produit (id_prod_Produit);
+ALTER TABLE Produit-Tag ADD CONSTRAINT FK_Produit-Tag_id_tag_Tag FOREIGN KEY (id_tag_Tag) REFERENCES Tag (id_tag_Tag);
+ALTER TABLE Achat ADD CONSTRAINT FK_Achat_id_clt_Client FOREIGN KEY (id_clt_Client) REFERENCES Client (id_clt_Client);
+ALTER TABLE Achat ADD CONSTRAINT FK_Achat_id_prod_Produit FOREIGN KEY (id_prod_Produit) REFERENCES Produit (id_prod_Produit);
